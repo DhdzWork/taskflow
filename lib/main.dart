@@ -1,7 +1,13 @@
+import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
+import 'package:task_flow_app/features/tasks/presentation/pages/home.dart';
 
 void main() {
-  runApp(const MainApp());
+  runApp(
+    DevicePreview(builder:(cotext)=>
+      MainApp()
+    )
+  );
 }
 
 class MainApp extends StatelessWidget {
@@ -10,11 +16,7 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
-      ),
-    );
+      debugShowCheckedModeBanner: false,
+      home:MyHome());
   }
 }
